@@ -4,43 +4,38 @@ import Button from '../components/Button'
 import Name from '../components/Name'
 
 type Props = {};
-export default class Details extends Component<Props> {
+export default class Auth extends Component<Props> {
   componentDidMount() {
-    console.log('Mount: Details')
+    console.log('Mount: Auth')
     console.log('navigation.state = ', this.props.navigation.state)
   }
   componentWillUnmount() {
-    console.log('Unmount: Details')
+    console.log('Unmount: Auth')
   }
 
   static navigationOptions = {
-    title: 'Details'
+    title: 'Auth'
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Name text='Details' />
+        <Name text='Auth' />
         <Button
-          text='Go to Details (navigate)'
-          onPress={() => this.props.navigation.navigate('Details')}
-        />
-        <Button
-          text='Go to Details (push)'
-          onPress={() => this.props.navigation.push('Details')}
-        />
-        <Button
-          text="Go to Home (navigate)"
+          text='Go to Home'
           onPress={() => this.props.navigation.navigate('Home')}
         />
+
         <Button
-          text="Go to Top in stack (popToTop)"
-          onPress={() => this.props.navigation.popToTop()}
+          text='Go to Details'
+          onPress={() => this.props.navigation.navigate('Details')}
         />
+
         <Button
-          text="Go back"
-          onPress={() => this.props.navigation.goBack()}
+          text='Go to Register'
+          onPress={() => this.props.navigation.navigate('Register')}
         />
+        Register
       </View>
     )
   }

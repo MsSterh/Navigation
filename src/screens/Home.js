@@ -7,9 +7,14 @@ type Props = {};
 export default class Home extends Component<Props> {
   componentDidMount() {
     console.log('Mount: Home')
+    console.log('navigation.state = ', this.props.navigation.state)
   }
   componentWillUnmount() {
     console.log('Unmount: Home')
+  }
+
+  static navigationOptions = {
+    title: 'Home'
   }
 
   render() {
