@@ -5,6 +5,13 @@ import Name from '../components/Name'
 
 type Props = {};
 export default class Home extends Component<Props> {
+  componentDidMount() {
+    console.log('Mount: Home')
+  }
+  componentWillUnmount() {
+    console.log('Unmount: Home')
+  }
+
   render() {
     return (
       <View style={styles.container}>

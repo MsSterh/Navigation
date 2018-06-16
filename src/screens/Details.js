@@ -5,6 +5,13 @@ import Name from '../components/Name'
 
 type Props = {};
 export default class Details extends Component<Props> {
+  componentDidMount() {
+    console.log('Mount: Details')
+  }
+  componentWillUnmount() {
+    console.log('Unmount: Details')
+  }
+
   render() {
     return (
       <View style={styles.container}>
