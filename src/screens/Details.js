@@ -1,28 +1,32 @@
-import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity
-} from 'react-native'
+import React, { Component } from 'react'
+import { StyleSheet, View } from 'react-native'
+import Button from '../components/Button'
+import Name from '../components/Name'
 
 type Props = {};
 export default class Details extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Details
-        </Text>
-        <TouchableOpacity onPress={() => {}}>
-          <View style={styles.buttonView}>
-            <Text style={styles.buttonText}>
-              Go to Details
-            </Text>
-          </View>
-        </TouchableOpacity>
+        <Name text='Details' />
+        <Button
+          text='Go to Details (navigate)'
+          onPress={() => this.props.navigation.navigate('Details')}
+        />
+        <Button
+          text='Go to Details (push)'
+          onPress={() => this.props.navigation.push('Details')}
+        />
+        <Button
+          text="Go to Home (navigate)"
+          onPress={() => this.props.navigation.navigate('Home')}
+        />
+        <Button
+          text="Go back"
+          onPress={() => this.props.navigation.goBack()}
+        />
       </View>
-    );
+    )
   }
 }
 
@@ -33,18 +37,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#FFFFFF',
     padding: 20
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10
-  },
-  buttonView: {
-    backgroundColor: '#0099FF',
-    padding: 20
-  },
-  buttonText: {
-    textAlign: 'center',
-    color: '#FFFFFF'
   }
 })

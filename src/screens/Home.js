@@ -1,28 +1,20 @@
 import React, { Component } from 'react'
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity
-} from 'react-native'
+import { StyleSheet, View } from 'react-native'
+import Button from '../components/Button'
+import Name from '../components/Name'
 
 type Props = {};
 export default class Home extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Home
-        </Text>
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Details')}>
-          <View style={styles.buttonView}>
-            <Text style={styles.buttonText}>
-              Go to Details
-            </Text>
-          </View>
-        </TouchableOpacity>
+        <Name text='Home' />
+        <Button
+          text='Go to Details'
+          onPress={() => this.props.navigation.navigate('Details')}
+        />
       </View>
-    );
+    )
   }
 }
 
@@ -33,18 +25,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#FFFFFF',
     padding: 20
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10
-  },
-  buttonView: {
-    backgroundColor: '#0099FF',
-    padding: 20
-  },
-  buttonText: {
-    textAlign: 'center',
-    color: '#FFFFFF'
   }
 })
